@@ -1,8 +1,8 @@
 var todo = {
-    templateUrl: 'js/common/todo',
-    controller: TodoController
+    templateUrl: 'js/common/todo.html',
+    controller: 'TodoController'
 }
 
 angular
-    .module('common.todo')
+    .module('app',[])
     .component('TodoController',TodoController);

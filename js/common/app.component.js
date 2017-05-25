@@ -5,5 +5,5 @@ var app = {
 
 
 angular
-    .module('common')
+    .module('app',[])
     .component('app', app);

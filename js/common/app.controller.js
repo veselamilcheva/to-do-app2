@@ -1,8 +1,8 @@
-function AppControll () {
+function AppController () {
 
 }
 
 
 angular
-    .module('common')
-    .controller('AppControll', AppControll);
+    .module('app', [])
+    .controller('AppController', AppController);

@@ -4,5 +4,5 @@ var todoList = {
 }
 
 angular
-    .module('common.todo')
+    .module('common',[])
     .component('todoList',todoList);

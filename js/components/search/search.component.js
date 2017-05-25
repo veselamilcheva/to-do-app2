@@ -5,5 +5,5 @@ var search = {
     
 
 angular
-    .module('components.search')
+    .module('components', [])
     .component('search',search);
