@@ -3,5 +3,5 @@ var root = {
 };
 
 angular
-    .module('app', [])
+    .module('root')
     .component('root', root);
