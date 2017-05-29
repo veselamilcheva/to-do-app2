@@ -1,4 +1,2 @@
 angular
-    .module('components', [
-        'components.filter'
-    ]);
+    .module('components', []);

@@ -1,7 +1,7 @@
 function TodoListController() {
     
-}
+};
 
 angular
-    .module('common.todo')
+    .module('components')
     .controller('TodoListController',TodoListController);

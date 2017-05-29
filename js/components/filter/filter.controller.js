@@ -2,5 +2,5 @@ function FilterController() {
     
 }
 angular
-    .module('components.filter')
+    .module('components')
     .controller('FilterController',FilterController);

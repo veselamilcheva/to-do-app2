@@ -1,9 +1,9 @@
 var filter = {
-    templateUrl: 'js/components/filter/filter.html'
-    //controller: 'FilterController'
+    templateUrl: 'js/components/filter/filter.html',
+    controller: 'FilterController'
 };
     
 
 angular
-    .module('components.filter', [])
+    .module('components')
     .component('filter', filter);

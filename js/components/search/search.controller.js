@@ -3,5 +3,5 @@ function SearchController() {
 }
 
 angular
-    .module('components.search')
+    .module('components')
     .controller('SearchController',SearchController);

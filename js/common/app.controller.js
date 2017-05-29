@@ -1,8 +1,7 @@
 function AppController () {
 
-}
-
+};
 
 angular
-    .module('app', [])
+    .module('common')
     .controller('AppController', AppController);
