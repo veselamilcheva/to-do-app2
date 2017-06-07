@@ -7,8 +7,7 @@ function AddController(store) {
     };
 
     vm.addTodo = function(newTodoItem) {
-      store.setInfo(newTodoItem);
-      console.log(store.getInfo());
+      store.setTodo(newTodoItem);
     }
 
 }

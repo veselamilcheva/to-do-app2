@@ -3,8 +3,13 @@ function AppController (store) {
      var vm = this;
 
     vm.$onInit = function() {
-        vm.todos = store.getInfo();
+        vm.todos = store.getTodo();
     }
+
+    vm.deleteTodo = function(index){
+        store.deleteTodo(index);
+    }
+    
 
 };
 

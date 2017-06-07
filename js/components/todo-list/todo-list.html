@@ -1,4 +1,8 @@
 <!--<pre>{{ $ctrl.todosList | json }}</pre>-->
-<ul ng-repeat="todo in $ctrl.todosList">
-   <todo single-todo="todo"></todo>
+<ul ng-repeat="todo in $ctrl.list">
+   <todo 
+    index="$index"
+    todo="todo"
+    delete="$ctrl.delete"
+   ></todo>
 </ul>

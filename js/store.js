@@ -5,21 +5,26 @@ angular
         var todos = [];
 
         return {
-            getInfo: getInfo,
-            setInfo: setInfo
+            getTodo: getTodo,
+            setTodo: setTodo,
+            deleteTodo: deleteTodo
         };
 
         // .................
 
-        function getInfo() {
+        function getTodo() {
             return todos;
         }
 
-        function setInfo(value) {
+        function setTodo(value) {
             todos.push({
                 todoText: value,
                 completed: false
             })
       
         }
+
+        function deleteTodo(index) {
+            todoList.splice(index, 1);
+        };
 });

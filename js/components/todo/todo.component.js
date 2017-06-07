@@ -2,7 +2,9 @@ var todo = {
     templateUrl: 'js/components/todo/todo.html',
     controller: 'TodoController',
     bindings: {
-        singleTodo: '<'
+        todo: '<',
+        delete: '&',
+        index: '<'
     }
 };
 
