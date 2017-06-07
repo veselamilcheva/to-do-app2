@@ -1,6 +1,9 @@
 var todoList = {
     templateUrl: 'js/components/todo-list/todo-list.html',
-    controller: 'TodoController'
+    controller: 'TodoController',
+    bindings: {
+        todosList: '<'
+    }
 };
 
 angular

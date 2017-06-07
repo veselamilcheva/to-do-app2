@@ -1,1 +1,4 @@
-<p style="color:purple;">this is my child to do list</p>
+<!--<pre>{{ $ctrl.todosList | json }}</pre>-->
+<ul ng-repeat="todo in $ctrl.todosList">
+   <todo single-todo="todo"></todo>
+</ul>

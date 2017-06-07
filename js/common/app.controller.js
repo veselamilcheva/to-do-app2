@@ -1,4 +1,10 @@
-function AppController () {
+function AppController (store) {
+
+     var vm = this;
+
+    vm.$onInit = function() {
+        vm.todos = store.getInfo();
+    }
 
 };
 

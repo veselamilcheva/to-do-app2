@@ -1,7 +1,10 @@
 var todo = {
     templateUrl: 'js/components/todo/todo.html',
-    controller: 'TodoController'
-}
+    controller: 'TodoController',
+    bindings: {
+        singleTodo: '<'
+    }
+};
 
 angular
     .module('components')

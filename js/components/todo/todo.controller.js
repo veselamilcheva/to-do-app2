@@ -1,12 +1,6 @@
-function TodoController(store) {
+function TodoController() {
     
-    var vm = this;
-
-    vm.$onInit = function() {
-        vm.todos = store.getInfo();
-
-    }
-
+   
 };
 
 angular
