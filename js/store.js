@@ -25,6 +25,6 @@ angular
         }
 
         function deleteTodo(index) {
-            todoList.splice(index, 1);
+            todos.splice(index, 1);
         };
 });

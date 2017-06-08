@@ -6,8 +6,8 @@ function AppController (store) {
         vm.todos = store.getTodo();
     }
 
-    vm.deleteTodo = function(index){
-        store.deleteTodo(index);
+    vm.deleteTodo = function(event){
+        store.deleteTodo(event);
     }
     
 

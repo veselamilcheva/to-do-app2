@@ -1,9 +1,9 @@
 var todoList = {
     templateUrl: 'js/components/todo-list/todo-list.html',
-    controller: 'TodoController',
+    controller: 'TodoListController',
     bindings: {
         list: '<',
-        deleteParent: '&'
+        deleteList: '&'
     }
 };
 

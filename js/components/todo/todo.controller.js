@@ -1,14 +1,13 @@
 function TodoController() {
     var vm = this;
 
-    vm.deleteTodo = function(event) {
+    vm.deleteTodo = function(index) {
     // Call parent
-    vm.delete({
+    vm.onDelete({
       $event: {
-        index: vm.index
+        index: index
       }
     });
-    console.log(event);
   };
 
 };

@@ -3,7 +3,7 @@ var todo = {
     controller: 'TodoController',
     bindings: {
         todo: '<',
-        delete: '&',
+        onDelete: '&',
         index: '<'
     }
 };

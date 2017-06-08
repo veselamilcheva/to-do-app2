@@ -5,7 +5,6 @@
 <div class="todo">
     <todo-list 
     list="$ctrl.todos"
-    delete-parent="$ctrl.deleteTodo"
-
+    delete-list="$ctrl.deleteTodo($event)"
     ></todo-list>    
 </div>    

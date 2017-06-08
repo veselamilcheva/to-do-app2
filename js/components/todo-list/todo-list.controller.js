@@ -4,10 +4,8 @@ function TodoListController() {
 
 
     vm.delete = function (event) {
-        vm.deleteParent({
-           $event: {
-                index: event.index
-              }  
+        vm.deleteList({
+           $event: event
         });
     }
 };

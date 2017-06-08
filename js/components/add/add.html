@@ -1,4 +1,4 @@
   <div class="add">  
-      <input id="addTodoTextInput" type="text" ng-model="newTodoItem">
-      <button ng-click="$ctrl.addTodo(newTodoItem)">Add</button>
+      <input id="addTodoTextInput" type="text" ng-model="$ctrl.newTodoItem">
+      <button ng-click="$ctrl.addTodo($ctrl.newTodoItem)">Add</button>
   </div>
