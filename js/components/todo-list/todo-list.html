@@ -1,8 +1,10 @@
 <!--<pre>{{ $ctrl.todosList | json }}</pre>-->
-<ul ng-repeat="todo in $ctrl.list">
-   <todo 
+<div class="wrap-todo" ng-repeat="todo in $ctrl.list">
+   <todo  class="single-todo"
     index="$index"
     todo="todo"
     on-delete="$ctrl.delete($event)"
+    on-toggle="$ctrl.toggle($event)"
+    on-update= "$ctrl.update($event)"
    ></todo>
-</ul>
+</div>

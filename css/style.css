@@ -23,7 +23,6 @@ li {
 
 .todo {
   display: flex;
-  width: 600px;
   padding: 20px;
   background-color: #B7CEEC;
   justify-content: center;
@@ -40,15 +39,15 @@ button {
   border: 1px solid #342D7E;
   padding: 5px 15px;
   cursor: pointer;
+  height: 39px;
 }
 
 input {
   border: none;
   border-bottom:  2px solid #342D7E;
-  padding: 5px 15px;
   height: 39px;
-  width: 500px;
   font-size: 16px;
+  padding: 5px 20px;
 }
 
 input:focus {
@@ -56,4 +55,43 @@ input:focus {
   border:  1px solid #342D7E;
   border-bottom:  2px solid #342D7E;
   transition: all 0.5s ease;
+}
+
+.wrap-todo {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+.single-todo {
+  display: flex;
+}
+
+.to-dotext {
+  display: flex;
+  width: 190px;
+  line-height: 1.3em;
+  flex: 6;
+  padding: 0 20px;
+  align-self: center;
+  word-break: break-all;
+  outline: none;
+  border: none;
+  background: none;
+  margin: 0 20px;
+}
+.to-dotext:focus {
+
+  border: 1px solid #342D7E;
+}
+
+.to-dotext.scracthed {
+     text-decoration: line-through;
+}
+
+.toogle-box {
+  height: 22px;
+  flex: 1;
+  border: 1px solid #342D7E;
+  align-self: center;
 }

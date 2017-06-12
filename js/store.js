@@ -5,9 +5,13 @@ angular
         var todos = [];
 
         return {
+
             getTodo: getTodo,
             setTodo: setTodo,
-            deleteTodo: deleteTodo
+            deleteTodo: deleteTodo,
+            toggleTodo: toggleTodo
+
+
         };
 
         // .................
@@ -26,5 +30,12 @@ angular
 
         function deleteTodo(index) {
             todos.splice(index, 1);
+        }
+
+        function toggleTodo(index) {
+
+            todos[index].completed = !todos[index].completed;
+
+            console.log(todos[index].completed );
         };
 });

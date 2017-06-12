@@ -1,10 +1,12 @@
  
 <div class="todo">
-   <add><add>   
+   <add on-add="$ctrl.addTodo($event)"><add>   
 </div>
 <div class="todo">
     <todo-list 
     list="$ctrl.todos"
     delete-list="$ctrl.deleteTodo($event)"
-    ></todo-list>    
+    toggle-list="$ctrl.toggleTodo($event)"
+    update-list="$ctrl.updateTodo($event)"
+    ></todo-list>  
 </div>    

@@ -4,7 +4,9 @@ var todo = {
     bindings: {
         todo: '<',
         onDelete: '&',
-        index: '<'
+        index: '<',
+        onToggle: '&',
+        onUpdate: '&'
     }
 };
 

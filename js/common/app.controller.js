@@ -6,8 +6,23 @@ function AppController (store) {
         vm.todos = store.getTodo();
     }
 
-    vm.deleteTodo = function(event){
+    vm.deleteTodo = function(event) {
         store.deleteTodo(event);
+    }
+
+    vm.addTodo = function(event) {
+
+        store.setTodo(event.newTodoItem);
+    }
+
+     vm.toggleTodo = function(event) {     
+        //store.setTodo(event);
+    }
+
+    vm.updateTodo = function(event) {
+
+        //this.todos[position].todoText = todoText;
+        console.log(event);
     }
     
 

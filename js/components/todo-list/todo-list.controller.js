@@ -8,6 +8,20 @@ function TodoListController() {
            $event: event
         });
     }
+
+    vm.toggle = function (event) {
+        vm.toggleList({
+           $event: event
+        });
+    }
+
+     vm.update = function (event) {
+        vm.updateList({
+           $event: event
+        });
+    }
+
+    
 };
 
 angular

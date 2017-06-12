@@ -3,7 +3,10 @@ var todoList = {
     controller: 'TodoListController',
     bindings: {
         list: '<',
-        deleteList: '&'
+        deleteList: '&',
+        toggleList: '&',
+        updateList: '&'
+
     }
 };
 
