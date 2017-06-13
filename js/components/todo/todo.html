@@ -1,3 +1,9 @@
- <input type="checkbox" ng-model="event" class="toogle-box" ng-checked="$ctrl.toggleTodo($ctrl.index, event);" />
- <input class="to-dotext" ng-model="$ctrl.todo.todoText" ng-class="{'scracthed': event === true}"  ng-dblclick="$ctrl.updateTodo($ctrl.index, $ctrl.todo.todoText)" value="{{ $ctrl.todo.todoText}}" ng-keyup="$event.keyCode == 13 ?   $ctrl.updateTodo($ctrl.index, $ctrl.todo.todoText) : null"> 
- <button ng-click="$ctrl.deleteTodo($ctrl.index)">Delete</button>
+ <input type="checkbox" class="toogle-box" ng-click="$ctrl.toggleTodo($ctrl.index, $ctrl.checked);" ng-checked="$ctrl.checked" />
+ <span class="to-dotext"  ng-hide="$ctrl.showtodo" ng-click="$ctrl.showtodo = true">{{ $ctrl.todo.todoText}}</span>
+ <input class="to-dotext" 
+ ng-model="$ctrl.todo.todoText" 
+ ng-class="{'scracthed': event === true}"
+ ng-show="$ctrl.showtodo"
+ ng-keyup="$event.keyCode == 13 ? $ctrl.updateTodo($ctrl.index, $ctrl.todo.todoText) : null"> 
+ <button ng-click="$ctrl.deleteTodo($ctrl.index)">Delete</button> 
+ 

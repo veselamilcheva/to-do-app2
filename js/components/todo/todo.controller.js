@@ -3,7 +3,7 @@ function TodoController() {
 
 
      vm.$onInit = function() {
-  
+      vm.checked = false;
     }
 
     vm.deleteTodo = function(index) {
@@ -15,17 +15,20 @@ function TodoController() {
       });
   };
 
-  vm.toggleTodo = function(index, event) {
+  vm.toggleTodo = function(index, checked) {
+
+      console.log(checked);
       // Call parent
       vm.onToggle({
         $event: {
           index: index,
-          completed: event
+          completed: !checked
         }
       });
   };
 
    vm.updateTodo = function updateTodo(index,description) {
+    vm.showtodo = false;
     // Call parent
     vm.onUpdate({
       $event: {
@@ -34,7 +37,6 @@ function TodoController() {
       }
     });
 
-    vm.editing = false;
   };
 
 };

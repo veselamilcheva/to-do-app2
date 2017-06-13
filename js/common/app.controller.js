@@ -7,7 +7,7 @@ function AppController (store) {
     }
 
     vm.deleteTodo = function(event) {
-        store.deleteTodo(event);
+        store.deleteTodo(event.index);
     }
 
     vm.addTodo = function(event) {
@@ -15,14 +15,16 @@ function AppController (store) {
         store.setTodo(event.newTodoItem);
     }
 
-     vm.toggleTodo = function(event) {     
-        //store.setTodo(event);
+    vm.toggleTodo = function(event) {  
+        console.log(event);
+
+        //vm.todos.completed = !vm.todos.completed;
     }
 
     vm.updateTodo = function(event) {
 
-        //this.todos[position].todoText = todoText;
-        console.log(event);
+       vm.todos[event.index].description = event.description;
+        
     }
     
 

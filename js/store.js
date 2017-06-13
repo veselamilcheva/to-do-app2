@@ -30,12 +30,13 @@ angular
 
         function deleteTodo(index) {
             todos.splice(index, 1);
+           
         }
 
         function toggleTodo(index) {
 
-            todos[index].completed = !todos[index].completed;
+            console.log(index);
 
-            console.log(todos[index].completed );
+            //todos[index].completed = !todos[index].completed;
         };
 });
