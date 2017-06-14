@@ -9,7 +9,8 @@ angular
             getTodo: getTodo,
             setTodo: setTodo,
             deleteTodo: deleteTodo,
-            toggleTodo: toggleTodo
+            toggleTodo: toggleTodo,
+            updateTodo: updateTodo
 
 
         };
@@ -33,10 +34,19 @@ angular
            
         }
 
-        function toggleTodo(index) {
+        function toggleTodo(event) {
 
-            console.log(index);
+            console.log(event);
 
-            //todos[index].completed = !todos[index].completed;
+            todos[event.index].completed = event.completed;
         };
+
+        function updateTodo(event) {
+
+             todos[event.index].todoText = event.todoText;
+
+             console.log(todos[event.index].todoText);
+        };
+
+        
 });

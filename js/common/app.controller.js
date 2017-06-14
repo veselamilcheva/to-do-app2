@@ -15,15 +15,16 @@ function AppController (store) {
         store.setTodo(event.newTodoItem);
     }
 
-    vm.toggleTodo = function(event) {  
+    vm.toggleTodo = function(event) { 
         console.log(event);
 
-        //vm.todos.completed = !vm.todos.completed;
+        store.toggleTodo(event);
     }
 
     vm.updateTodo = function(event) {
-
-       vm.todos[event.index].description = event.description;
+      
+        console.log(event);
+       store.updateTodo(event);
         
     }
     
