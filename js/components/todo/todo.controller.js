@@ -6,9 +6,12 @@ function TodoController() {
     
     }
 
-    vm.$onChanges = function() {
-      vm.todoNew = angular.copy(vm.todo);
+    vm.$onChanges = function(changes) {
+      console.log(changes);
+        if ( changes.todo.currentValue ) {
+           vm.todoNew = angular.copy(changes.todo.currentValue);  // rule everytime todo changes you give the current value to do 
     } 
+  }
 
 
     vm.deleteTodo = function(index) {

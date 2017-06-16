@@ -1,12 +1,15 @@
  
 <div class="todo">
+
    <add on-add="$ctrl.addTodo($event)"><add>   
 </div>
 <div class="todo">
     <todo-list 
-    list="$ctrl.todos"
+    list="$ctrl.state.todos"
     delete-list="$ctrl.deleteTodo($event)"
     toggle-list="$ctrl.toggleTodo($event)"
     update-list="$ctrl.updateTodo($event)"
     ></todo-list>  
 </div>    
+
+<pre>{{ $ctrl.state.todos | json }}</pre>

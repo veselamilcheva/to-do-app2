@@ -1,8 +1,13 @@
 angular
     .module('root')
-    .service('store', function () {
+    .factory('store', function () {
 
-        var todos = [];
+        var state = {
+
+            todos: []
+        }
+
+        
 
         return {
 
@@ -18,32 +23,48 @@ angular
         // .................
 
         function getTodo() {
-            return todos;
+            return state;
         }
 
         function setTodo(value) {
-            todos.push({
+
+            state.todos = [].concat(state.todos, [{
                 todoText: value,
                 completed: false
-            })
+            }]);
       
         }
 
         function deleteTodo(index) {
-            todos.splice(index, 1);
+            state.todos.splice(index, 1);
            
         }
 
         function toggleTodo(event) {
 
-            console.log(event);
+            // console.log(event);
 
-            todos[event.index].completed = event.completed;
+            // state.todos[event.index].completed = event.completed;
+            // 
+            // 
+            state.todos = state.todos.map(function(item, index) {
+                  
+
+            console.log(event.index , index ); //item is every single object yes  index is index of the to do object 
+
+                    if (event.index === index) {
+
+                        item.completed = event.completed;
+                    }
+
+                  return item;  //returns arr of objects               //what your new object should look like for each item you pass rule: never access state.todos inside map
+
+            })
         };
 
         function updateTodo(event) {
 
-             todos[event.index].todoText = event.todoText;
+             state.todos[event.index].todoText = event.todoText;
 
              console.log(todos[event.index].todoText);
         };

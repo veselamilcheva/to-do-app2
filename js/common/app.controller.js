@@ -3,7 +3,7 @@ function AppController (store) {
      var vm = this;
 
     vm.$onInit = function() {
-        vm.todos = store.getTodo();
+        vm.state = store.getTodo();
     }
 
     vm.deleteTodo = function(event) {
@@ -16,7 +16,7 @@ function AppController (store) {
     }
 
     vm.toggleTodo = function(event) { 
-        console.log(event);
+        console.log();
 
         store.toggleTodo(event);
     }
