@@ -45,7 +45,6 @@ function TodoController() {
     });
 
   };
-
 };
 
 angular

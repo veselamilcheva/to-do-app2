@@ -16,16 +16,19 @@ function AppController (store) {
     }
 
     vm.toggleTodo = function(event) { 
-        console.log();
-
+    
         store.toggleTodo(event);
     }
 
     vm.updateTodo = function(event) {
       
-        console.log(event);
+       
        store.updateTodo(event);
         
+    }
+    vm.toggleallTodo = function(event) {
+         console.log(event);
+         store.toggleAllTodo(event);
     }
     
 

@@ -5,7 +5,8 @@ var todoList = {
         list: '<',
         deleteList: '&',
         toggleList: '&',
-        updateList: '&'
+        updateList: '&',
+        toogleallList: '&'
 
     }
 };

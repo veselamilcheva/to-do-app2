@@ -1,5 +1,5 @@
-<!--<pre>{{ $ctrl.todosList | json }}</pre>-->
-<div class="wrap-todo" ng-repeat="todo in $ctrl.list">
+<input type="checkbox" ng-click="$ctrl.toggleAll($ctrl.isAllSelected)" ng-model="$ctrl.isAllSelected">Select all
+<div class="wrap-todo" ng-repeat="todo in $ctrl.listNew">
    <todo  class="single-todo"
     index="$index"
     todo="todo"
