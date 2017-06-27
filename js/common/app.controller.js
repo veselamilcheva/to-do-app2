@@ -1,4 +1,6 @@
-function AppController (store) {
+function AppController (store, todoService) {
+
+    todoService.getTodo();
 
      var vm = this;
 
