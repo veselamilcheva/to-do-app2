@@ -8,7 +8,7 @@ angular
         return {
           getTodo: function() {
             
-           $http({
+           return $http({
               method: 'GET',
               url: 'https://vast-shore-36257.herokuapp.com/todos'
             }).then(function successCallback(response) {
