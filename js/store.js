@@ -30,12 +30,11 @@ angular
         }
 
         function setTodo(val) {
-
-            state.todos = [].concat(state.todos, [{
-                todoText: val,
-                completed: false
-            }]);
-      
+        
+            return todoService.setTodo(val).then(function(response){ 
+            state.todos = [].concat(state.todos, [response.data]);
+            });
+            
         }
 
         function deleteTodo(index) {
@@ -81,7 +80,7 @@ angular
 
                     if (event.index === index) {
 
-                        item.todoText = event.todoText;
+                        item.text = event.text;
                     }
 
                   return item;  //returns arr of objects               //what your new object should look like for each item you pass rule: never access state.todos inside map
