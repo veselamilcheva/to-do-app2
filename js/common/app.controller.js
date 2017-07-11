@@ -1,11 +1,15 @@
-function AppController (store, todoService) {
+function AppController (store) {
 
-    todoService.getTodo();
-
+   
      var vm = this;
 
     vm.$onInit = function() {
-        vm.state = store.getTodo();
+
+         store.getTodo().then(function(response){ 
+             console.log(response);
+            vm.state = response; 
+            });
+
     }
 
     vm.deleteTodo = function(event) {

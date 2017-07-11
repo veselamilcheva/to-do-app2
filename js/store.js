@@ -1,11 +1,11 @@
 angular
     .module('root')
-    .factory('store', function () {
+    .factory('store', function (todoService) {
         var vm = this;
-        var state = {
+       
+        
 
-            todos: []
-        }        
+         var state={todos:[]};
 
         return {
 
@@ -18,17 +18,21 @@ angular
 
 
         };
-
         // .................
 
         function getTodo() {
-            return state;
+            return todoService.getTodo().then(function(response){ 
+            state.todos = response.data.todos; 
+            return state;  
+
+            });
+            
         }
 
-        function setTodo(value) {
+        function setTodo(val) {
 
             state.todos = [].concat(state.todos, [{
-                todoText: value,
+                todoText: val,
                 completed: false
             }]);
       
