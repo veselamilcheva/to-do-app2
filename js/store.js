@@ -38,9 +38,11 @@ angular
         }
 
         function deleteTodo(index) {
-            //console.log(index);
-            state.todos = state.todos.filter(function(el, index2) {
-                    return index2 !== index;
+           return todoService.deleteTodo(index).then(function(response){ 
+            //console.log(response);
+             state.todos = response.data.todos; 
+            return state;  
+
             });
            
         }

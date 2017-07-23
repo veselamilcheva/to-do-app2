@@ -32,18 +32,27 @@ angular
             }).then(function(response) {
                 console.log(response);
                 return response;
-                // this callback will be called asynchronously
-                // when the response is available
-              }, function(response) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
               });
 
-            }     
+            },
+             deleteTodo: function(id) {
+            console.log(id);
+           return $http({
+              method: 'DELETE',
+              url: 'https://vast-shore-36257.herokuapp.com/todos/' + id,
+              data: {
+                id:id
+              }
+            }).then(function(response) {
+                console.log(response);
+                return response;
+              
+              });
+
+            },
+
         }
       }
-
-
 
 })();
 
