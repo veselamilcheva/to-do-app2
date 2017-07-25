@@ -38,9 +38,14 @@ angular
         }
 
         function deleteTodo(index) {
-           return todoService.deleteTodo(index).then(function(response){ 
-            //console.log(response);
-             state.todos = response.data.todos; 
+           return todoService.deleteTodo(index).then(function(response) { 
+            var res = response.data.todo._id;
+            console.log(state.todos);
+             state.todos = state.todos.filter(function(el) {
+
+                    return res !== el._id;
+            });
+             console.log(state.todos);
             return state;  
 
             });

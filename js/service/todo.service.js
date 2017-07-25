@@ -30,7 +30,6 @@ angular
                 text:val
               }
             }).then(function(response) {
-                console.log(response);
                 return response;
               });
 
@@ -44,7 +43,6 @@ angular
                 id:id
               }
             }).then(function(response) {
-                console.log(response);
                 return response;
               
               });
