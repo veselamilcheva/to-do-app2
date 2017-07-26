@@ -40,12 +40,11 @@ angular
         function deleteTodo(index) {
            return todoService.deleteTodo(index).then(function(response) { 
             var res = response.data.todo._id;
-            console.log(state.todos);
              state.todos = state.todos.filter(function(el) {
 
                     return res !== el._id;
             });
-             console.log(state.todos);
+
             return state;  
 
             });
@@ -54,45 +53,37 @@ angular
 
         function toggleTodo(event) {
 
-            // console.log(event);
-
-            // state.todos[event.index].completed = event.completed;
-            // 
-            // 
             state.todos = state.todos.map(function(item, index) {
-                  
-
-            console.log(event.index , index ); //item is every single object   index is index of the to do object 
 
                     if (event.index === index) {
 
                         item.completed = event.completed;
                     }
 
-                  return item;  //returns arr of objects               //what your new object should look like for each item you pass rule: never access state.todos inside map
+                  return item;
 
             })
         };
 
         function updateTodo(event) {
-
-             // state.todos[event.index].todoText = event.todoText;
-
-             // console.log(todos[event.index].todoText);
-             // 
+            
+         return todoService.updateTodo(state.todos[event.index]._id , event.todoText, event.completed).then(function(response) { 
+            
              state.todos = state.todos.map(function(item, index) {
                   
-
-            //console.log(event.index , index ); //item is every single object   index is index of the to do object 
-
-                    if (event.index === index) {
+                    if (response.data.todo._id === index) {
 
                         item.text = event.text;
                     }
 
-                  return item;  //returns arr of objects               //what your new object should look like for each item you pass rule: never access state.todos inside map
+                  return item; 
 
             })
+            
+            return state;  
+
+            });
+            
         };
 
         function toggleAllTodo (event) {
@@ -112,7 +103,4 @@ angular
            
         }
 
-
-
-        
 });

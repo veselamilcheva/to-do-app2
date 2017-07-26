@@ -8,8 +8,7 @@ function TodoController() {
 
     vm.$onChanges = function(changes) {
         if ( changes.todo.currentValue ) {
-           vm.todoNew = angular.copy(changes.todo.currentValue);  // rule everytime todo changes you give the current value to do 
-          // console.log(vm.todoNew );
+           vm.todoNew = angular.copy(changes.todo.currentValue);  
     } 
   }
 
@@ -34,13 +33,14 @@ function TodoController() {
       });
   };
 
-   vm.updateTodo = function updateTodo(index, description) {
+   vm.updateTodo = function updateTodo(index, description, completed) {
     vm.showtodo = false;
     // Call parent
     vm.onUpdate({
       $event: {
         index: index,
-        todoText: description
+        todoText: description,
+        completed: vm.todoNew.completed
       }
     });
 

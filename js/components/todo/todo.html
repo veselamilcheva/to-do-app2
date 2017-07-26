@@ -4,5 +4,5 @@
  ng-model="$ctrl.todoNew.text" 
  ng-class="{'scracthed': event === true}"
  ng-show="$ctrl.showtodo"
- ng-keyup="$event.keyCode == 13 ? $ctrl.updateTodo($ctrl.index, $ctrl.todoNew.text) : null"> 
+ ng-keyup="$event.keyCode == 13 ? $ctrl.updateTodo($ctrl.index, $ctrl.todoNew.text, $ctrl.todoNew.completed) : null"> 
  <button ng-click="$ctrl.deleteTodo($ctrl.todoNew._id)">Delete</button> 

@@ -34,15 +34,31 @@ angular
               });
 
             },
-             deleteTodo: function(id) {
-            console.log(id);
-           return $http({
-              method: 'DELETE',
-              url: 'https://vast-shore-36257.herokuapp.com/todos/' + id,
-              data: {
-                id:id
-              }
-            }).then(function(response) {
+           deleteTodo: function(id) {
+             return $http({
+                method: 'DELETE',
+                url: 'https://vast-shore-36257.herokuapp.com/todos/' + id,
+                data: {
+                  id:id
+                }
+              }).then(function(response) {
+                return response;
+              
+              });
+
+            },
+            updateTodo: function(id, todo, completed) {
+             return $http({
+                method: 'PATCH',
+                url: 'https://vast-shore-36257.herokuapp.com/todos/' + id,
+                data: {
+                  id:id,
+                  todo: {
+                    "text": todo,
+                    "completed": completed
+                  }
+                }
+              }).then(function(response) {
                 return response;
               
               });
