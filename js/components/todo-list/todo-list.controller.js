@@ -35,6 +35,10 @@ function TodoListController() {
             $event: event
         })
      }
+
+     vm.deleteAll = function() {
+       
+     }
      
   //  vm.toggleAll = function(event) {
 

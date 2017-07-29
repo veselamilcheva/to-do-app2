@@ -52,19 +52,15 @@ angular
                 method: 'PATCH',
                 url: 'https://vast-shore-36257.herokuapp.com/todos/' + id,
                 data: {
-                  id:id,
-                  todo: {
                     "text": todo,
                     "completed": completed
                   }
-                }
               }).then(function(response) {
                 return response;
               
               });
 
             },
-
         }
       }
 

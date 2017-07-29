@@ -14,7 +14,8 @@ angular
             deleteTodo: deleteTodo,
             toggleTodo: toggleTodo,
             updateTodo: updateTodo,
-            toggleAllTodo: toggleAllTodo
+            toggleAllTodo: toggleAllTodo,
+            deleteAll: deleteAll
 
 
         };
@@ -66,14 +67,14 @@ angular
         };
 
         function updateTodo(event) {
-            
+
          return todoService.updateTodo(state.todos[event.index]._id , event.todoText, event.completed).then(function(response) { 
             
              state.todos = state.todos.map(function(item, index) {
                   
-                    if (response.data.todo._id === index) {
+                    if (response.data.todo._id === item[index]._id) {
 
-                        item.text = event.text;
+                        item.text = state.todos[event.index]._id;
                     }
 
                   return item; 
@@ -86,7 +87,7 @@ angular
             
         };
 
-        function toggleAllTodo (event) {
+        function toggleAllTodo(event) {
 
             var todosnew = [];
            state.todos.forEach(function(el) {
@@ -101,6 +102,19 @@ angular
             })
            state.todos = todosnew
            
+        };
+
+        function deleteAll() {
+
+            $q.all([
+                p1.then(thenFn), 
+                p2.then(thenFn)
+            ])
+            .then(function(values) {        
+                console.log(values);
+                return values;
+            });
+
         }
 
 });

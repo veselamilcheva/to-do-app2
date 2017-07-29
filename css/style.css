@@ -95,3 +95,13 @@ input:focus {
   border: 1px solid #342D7E;
   align-self: center;
 }
+.flex-1 {
+ 
+}
+.flex-2 {
+  margin-right: 145px;
+}
+.select-all {
+    position: relative;
+    top: -12px;
+}
