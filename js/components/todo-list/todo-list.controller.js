@@ -33,6 +33,10 @@ function TodoListController() {
         })
      }
 
+     vm.deleteAllList = function() {
+        vm.deleteAll();
+     }
+
 };
 
 angular
