@@ -24,7 +24,6 @@ function TodoController() {
 
   vm.toggleTodo = function(index, checked) {
 
-      // Call parent
       vm.onToggle({
         $event: {
           index: index,
@@ -35,7 +34,7 @@ function TodoController() {
 
    vm.updateTodo = function updateTodo(index, description, completed) {
     vm.showtodo = false;
-    // Call parent
+  
     vm.onUpdate({
       $event: {
         index: index,

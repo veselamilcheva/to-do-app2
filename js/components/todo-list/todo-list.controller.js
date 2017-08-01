@@ -2,10 +2,7 @@ function TodoListController() {
     
     var vm = this;
 
-
-
      vm.$onChanges = function(changes) {
-          console.log(changes);
             if ( changes.list.currentValue ) {
                vm.listNew = angular.copy(changes.list.currentValue);  // rule everytime todo changes you give the current value to do 
         } 
@@ -36,24 +33,6 @@ function TodoListController() {
         })
      }
 
-     vm.deleteAll = function() {
-       
-     }
-     
-  //  vm.toggleAll = function(event) {
-
-  //       vm.listNew.forEach(function(el) {
-  //          if (vm.isAllSelected === true) {
-  //             el.completed = true;
-  //            } else {
-  //             el.completed = false;
-  //            }
-  //       })
-
-     
-  // }
-
-    
 };
 
 angular

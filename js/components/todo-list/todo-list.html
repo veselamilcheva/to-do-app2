@@ -1,10 +1,10 @@
 <div class="wrap-todo">
     <div class="flex-2">
     <input type="checkbox" ng-click="$ctrl.toggleAll($ctrl.isAllSelected)" ng-model="$ctrl.isAllSelected">
-    <span class="select-all">Select all</span>
+    <span class="select-all">Select all completed</span>
     </div>
     <div class="flex-1">
-    <button on-delete-all="$ctrl.deleteAll($event)">Delete All</button>
+    <button ng-click="$ctrl.deleteAll()">Delete All</button>
     </div>
 </div>
 <div class="wrap-todo" ng-repeat="todo in $ctrl.listNew">

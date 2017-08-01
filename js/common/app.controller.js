@@ -6,7 +6,6 @@ function AppController (store) {
     vm.$onInit = function() {
 
          store.getTodo().then(function(response){ 
-             console.log(response);
             vm.state = response; 
             });
 
@@ -17,26 +16,24 @@ function AppController (store) {
     }
 
     vm.addTodo = function(event) {
-
         store.setTodo(event.newTodoItem);
     }
 
-    vm.toggleTodo = function(event) { 
-    
+    vm.toggleTodo = function(event) {     
         store.toggleTodo(event);
     }
 
     vm.updateTodo = function(event) {
-      
-       
        store.updateTodo(event);
         
     }
     vm.toggleallTodo = function(event) {
-         console.log(event);
-         store.toggleAllTodo(event);
+        store.toggleAllTodo(event);
     }
-    
+
+    vm.deleteAllTodo = function() {
+        store.deleteAll();
+    }
 
 };
 

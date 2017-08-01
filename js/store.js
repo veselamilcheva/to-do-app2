@@ -1,6 +1,6 @@
 angular
     .module('root')
-    .factory('store', function (todoService) {
+    .factory('store', function (todoService, $q) {
         var vm = this;
        
         
@@ -54,16 +54,21 @@ angular
 
         function toggleTodo(event) {
 
-            state.todos = state.todos.map(function(item, index) {
+         return todoService.updateTodo(state.todos[event.index]._id , event.todoText, event.completed).then(function(response) {    
 
-                    if (event.index === index) {
+                state.todos = state.todos.map(function(item, index) {
 
-                        item.completed = event.completed;
-                    }
+                        if (event.index === index) {
 
-                  return item;
+                            item.completed = event.completed;
+                        }
 
-            })
+                      return item;
+
+                })
+             return state;  
+
+            });
         };
 
         function updateTodo(event) {
@@ -105,16 +110,22 @@ angular
         };
 
         function deleteAll() {
-
-            $q.all([
-                p1.then(thenFn), 
-                p2.then(thenFn)
-            ])
-            .then(function(values) {        
-                console.log(values);
-                return values;
+            var promisses = [];
+            state.todos.forEach(function(item){
+                if (item.completed) {
+                    promisses.push(todoService.deleteTodo(item._id));
+                }
             });
 
-        }
+            $q.all(promisses).then(function(response) {
+                var idResponse = [];
+                 response.forEach(function(elres){
+                    idResponse.push(elres.data.todo._id);
+                 })   
+                 state.todos = state.todos.filter(function(el) {
 
-});
+                    return  idResponse.indexOf(el._id) === -1;
+                  }); 
+            });
+        }
+    });
