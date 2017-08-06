@@ -34,6 +34,10 @@ function AppController (store) {
     vm.deleteAllTodo = function() {
         store.deleteAll();
     }
+    vm.deleteAllTodosNow = function() {
+        console.log('Alert');
+        store.deleteAllTodos();
+    }
 
 };
 

@@ -15,7 +15,8 @@ angular
             toggleTodo: toggleTodo,
             updateTodo: updateTodo,
             toggleAllTodo: toggleAllTodo,
-            deleteAll: deleteAll
+            deleteAll: deleteAll,
+            deleteAllTodos: deleteAllTodos
 
 
         };
@@ -127,5 +128,18 @@ angular
                     return  idResponse.indexOf(el._id) === -1;
                   }); 
             });
+        }
+
+        function deleteAllTodos() {
+
+        
+          return todoService.deleteAllTodos().then(function(response) { 
+            
+            state.todos = [];
+
+            return state;  
+
+            });
+           
         }
     });

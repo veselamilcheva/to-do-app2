@@ -47,6 +47,17 @@ angular
               });
 
             },
+            deleteAllTodos: function() {
+             return $http({
+                method: 'DELETE',
+                url: 'https://vast-shore-36257.herokuapp.com/todos/',
+                data: []
+              }).then(function(response) {
+                return response;
+              
+              });
+
+            },
             updateTodo: function(id, todo, completed) {
              return $http({
                 method: 'PATCH',
